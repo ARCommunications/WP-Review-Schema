@@ -343,9 +343,9 @@ function review_schema_dashboard() {
 
         </div>
     </div>
-
-    <script src="<?php echo plugins_url( '/ultimate-schema/admin/js/jquery.easytabs.min.js' ) ?>"></script>
-    <script src="<?php echo plugins_url( '/ultimate-schema/admin/js/jquery.hashchange.min.js' ) ?>"></script>
+    <?php $adminPath = plugin_dir_url(__FILE__); ?>
+    <script src="<?php echo $adminPath . 'js/jquery.easytabs.min.js'; ?>"></script>
+    <script src="<?php echo $adminPath . 'js/jquery.hashchange.min.js'; ?>"></script>
     <script language="javascript">
         jQuery("#tab-container").easytabs();
         jQuery("#postbox-container-1").css({"width": "87%", "padding-right": "2%"});
