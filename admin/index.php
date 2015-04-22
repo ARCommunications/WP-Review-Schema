@@ -21,7 +21,7 @@ function add_the_script() {
 
 add_action( 'admin_print_scripts', 'add_the_script' );
 
-//The Main Admin Dashboard for Ultimate Schema
+//The Main Admin Dashboard for Review Schema
 function review_schema_dashboard() {
     $plugins_url = plugins_url();
     $args_review = get_option( 'bsf_review' );
@@ -30,7 +30,7 @@ function review_schema_dashboard() {
     //var_dump( $default );
     ?>
     <div class="wrap">
-        <div id="star-icons-32" class="icon32"></div><h2>Ultimate Schema - Dashboard</h2>
+        <div id="star-icons-32" class="icon32"></div><h2>Review Schema - Dashboard</h2>
         <div class="clear"></div>
         <div class="postbox" style=" width: 36%; float: right; ">
             <h3 class="get_in_touch"><p>Get in touch with the Plugin Developers</p></h3>
@@ -313,9 +313,9 @@ function review_schema_dashboard() {
                                             <li><strong>Why does the plugin create extra content at the end of my page / post? Can I simply hide / customise it? It's messing my design!</strong></li>
                                             <p>We understand you don't like the content that gets displayed on your page / post. However as per the strong recommendation of Google, the MicroData should be clearly visible to the user.</p>
                                             <p>Here is a reference link of what Google says. <a href="https://sites.google.com/site/webmasterhelpforum/en/faq-rich-snippets#display"> https://sites.google.com/site/webmasterhelpforum/en/faq-rich-snippets#display</a></p>
-                                            <p>If you don't like the default design the content box created by plugin, you can always <a href="?page=ultimate-schema#tab-4"> customise it </a> or edit CSS located <a target="_blank" title="Click here to edit the css" href="plugin-editor.php?file=ultimate-schema/css/style.css&plugin=ultimate-schema/index.php"> here </a>or request professional service at $25</p>
+                                            <p>If you don't like the default design the content box created by plugin, you can always <a href="?page=review_schema_dashboard#tab-4"> customise it </a> or edit CSS located <a target="_blank" title="Click here to edit the css" href="plugin-editor.php?file=wp-review-schema/css/style.css&plugin=wp-review-schema/index.php"> here </a>or request professional service at $25</p>
                                             <li><strong>How does this plugin work with other plugins like WordPress SEO, wooCommerce, etc?</strong></li>
-                                            <p>Well, the plugin works perfectly with most of the other plugins as the only thing "All in One Schema.org Rich Snippets" does is - it give you power to add Rich Snippets MicroData in your pages and posts easily. <br><br>If you find any it conflicting with any other plugin, please do not hesitate to report an issue.</p>
+                                            <p>Well, the plugin works perfectly with most of the other plugins as the only thing "WP Review Schema" does is - it give you power to add Rich Snippets MicroData in your pages and posts easily. <br><br>If you find any it conflicting with any other plugin, please do not hesitate to report an issue.</p>
                                             <li><strong>How much time does it take to show up rich snippets for my search results? My search results are still not coming up with rich snippets.</strong></li>
                                             <p>Most probably rich snippets are displayed in for you search results as soon as search engines crawl the MicroData the plugin has created. However it's totally upto search engines to display rich snippets for your search result (which mostly depends on your website authority)</p>
                                             <p>If rich snippets are not appearing in your search results yet, most probably they will start appearing soon as Google / other search engines finds your website more authoritative.</p>

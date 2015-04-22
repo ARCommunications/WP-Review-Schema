@@ -156,11 +156,11 @@
 
             $html = '
             <html>
-            <head><title>ARCom Ultimate Schema</title></head>
+            <head><title>ARCom Review Schema Free</title></head>
             <body>
                 <table width="100%" cellpadding="10" cellspacing="10">
                     <tr>
-                        <th colspan="2"> ARCom Schema.org Rich Snippets Support</th>
+                        <th colspan="2"> ARCom Review Schema Free Support</th>
                     </tr>
                     <tr>
                         <td width="22%"> Name : </td>
