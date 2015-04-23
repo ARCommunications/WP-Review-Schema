@@ -1,13 +1,15 @@
 <?php
 /*
   Plugin Name: WP Review Schema Free
-  Plugin URI: http://www.arcom.com.bd
-  Author: ARCom
-  Author URI: http://www.arcom.com.bd
-  Description: The Review Schema gives the power to the blog author to control the rich snippets to be shown in the search results by the search engines.
-  Version: 1.0
-  Text Domain: review-schema
+  Plugin URI: http://wpdeveloper.net/free-plugin/wp-review-schema/
+  Author: WPDeveloper.net
+  Author URI: http://wpdeveloper.net
+  Description: The Review Schema gives the power to the blog author to control the rich snippets of Reviews to be shown in the search results by the search engines.
+  Version: 1.0.0
+  Text Domain: wp-review-schema
   License: GPL2
+  Min WP Version: 2.5
+  Max WP Version: 4.2
  */
 
   if ( !defined( 'REVIEW_META_BOX_URL' ) ) define( 'REVIEW_META_BOX_URL', plugin_dir_path( __FILE__ ) );
@@ -132,7 +134,7 @@
         }
 
         public function submit_request() {
-            $to = "Asif Rahman <asif@arcom.com.bd>";
+            $to = "WPDeveloper.net <info@wpdeveloper.net>";
             $from = $_POST['email'];
             $site = $_POST['site_url'];
             $sub = $_POST['subject'];
