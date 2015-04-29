@@ -3,13 +3,13 @@ global $post;
 $meta_boxes = array();
 $meta_boxes = apply_filters( 'bsf_meta_boxes', $meta_boxes );
 foreach ( $meta_boxes as $meta_box ) {
-    $my_box = new bsf_Meta_Box( $meta_box );
+    $my_box = new wprc_Meta_Box( $meta_box );
 }
 
 /**
  * Create meta boxes
  */
-class bsf_Meta_Box {
+class wprc_Meta_Box {
 
     protected $_meta_box;
 
@@ -199,7 +199,7 @@ class bsf_Meta_Box {
 /**
  * Adding scripts and styles
  */
-function bsf_scripts( $hook ) {
+function wprc_scripts( $hook ) {
     global $wp_version;
     // only enqueue our scripts/styles on the proper pages
     if ( $hook == 'post.php' || $hook == 'post-new.php' || $hook == 'page-new.php' || $hook == 'page.php' ) {
@@ -226,4 +226,4 @@ function bsf_scripts( $hook ) {
     }
 }
 
-add_action( 'admin_enqueue_scripts', 'bsf_scripts', 10 );
+add_action( 'admin_enqueue_scripts', 'wprc_scripts', 10 );

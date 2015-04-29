@@ -1,35 +1,35 @@
 <?php
 
-add_action( 'init', 'initialize_review_meta_boxes', 9999 );
+add_action( 'init', 'wprc_initialize_review_meta_boxes', 9999 );
 /**
  * Initialize the metabox class.
  */
 /* FUNCTION to check for posts having snippets */
-add_action( 'wp_head', 'check_snippet_existence', '', 7 );
+add_action( 'wp_head', 'wprc_check_snippet_existence', '', 7 );
 
-function check_snippet_existence() {
-    add_action( 'wp_head', 'frontend_style' );
-    add_action( 'wp_enqueue_scripts', 'enque' );
+function wprc_check_snippet_existence() {
+    add_action( 'wp_head', 'wprc_frontend_style' );
+    add_action( 'wp_enqueue_scripts', 'wprc_enque' );
 }
 
-function enque() {
+function wprc_enque() {
     wp_enqueue_style( 'rating_style', plugin_dir_url( __FILE__ ) . 'css/jquery.rating.css' );
     wp_enqueue_script( 'jquery_rating', plugin_dir_url( __FILE__ ) . 'js/jquery.rating.min.js', array('jquery') );
 }
 
-function frontend_style() {
+function wprc_frontend_style() {
     wp_register_style( 'review_style', plugins_url( '/css/style.css', __FILE__ ) );
     wp_enqueue_style( 'review_style' );
 }
 
-function initialize_review_meta_boxes() {
+function wprc_initialize_review_meta_boxes() {
     if ( !class_exists( 'bsf_Meta_Box' ) ) {
         require_once plugin_dir_path( __FILE__ ) . 'init.php';
     }
 }
 
 //Function to display the ultimate schema output below the content
-function display_rich_snippet( $content ) {
+function wprc_display_rich_snippet( $content ) {
     global $post;
 
     $args_color = get_option( 'bsf_custom' );
@@ -126,10 +126,9 @@ function display_rich_snippet( $content ) {
 }
 
 //Filter the content and return with rich snippet output
-add_filter( 'the_content', 'display_rich_snippet', 100 );
+add_filter( 'the_content', 'wprc_display_rich_snippet', 100 );
 
 function bsf_metaboxes( array $meta_boxes ) {
-
     // Start with an underscore to hide fields from custom fields list
     $prefix = '_bsf_';
     $post_types = get_post_types( '', 'names' );
@@ -142,7 +141,7 @@ function bsf_metaboxes( array $meta_boxes ) {
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'fields' => array(
-            // Meta Settings for Item Review        
+            // Meta Settings for Item Review
             array(
                 'name' => __( 'Rich Snippets - Item Review', 'ultimate-schema' ),
                 'desc' => __( 'Please provide the following information.', 'ultimate-schema' ),

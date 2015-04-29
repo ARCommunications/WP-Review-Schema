@@ -2,7 +2,7 @@
 // Start object buffering to supress warning messages
 ob_start();
 if ( is_admin() ) {
-    add_action( 'admin_footer', 'add_footer_script' );
+    add_action( 'admin_footer', 'wprc_add_footer_script' );
 }
 
 //enqueues the scripts and styles in admin dashboard
@@ -14,12 +14,11 @@ function review_schema_admin_styles() {
     wp_enqueue_script( 'bsf_jquery_star' );
 }
 
-function add_the_script() {
+function wprc_add_the_script() {
     wp_enqueue_script( 'postbox' );
     wp_enqueue_style( 'admin_style' );
 }
-
-add_action( 'admin_print_scripts', 'add_the_script' );
+add_action( 'admin_print_scripts', 'wprc_add_the_script' );
 
 //The Main Admin Dashboard for Review Schema
 function review_schema_dashboard() {
@@ -27,7 +26,6 @@ function review_schema_dashboard() {
     $args_review = get_option( 'bsf_review' );
     $default = get_option( 'bsf_default' );
     $args_color = get_option( 'bsf_custom' );
-    //var_dump( $default );
     ?>
     <div class="wrap">
         <div id="star-icons-32" class="icon32"></div><h2>Review Schema - Dashboard</h2>
@@ -53,13 +51,13 @@ function review_schema_dashboard() {
                         <tr>
                             <td><label for="subject"><strong>Subject:</strong> </label></td>
                             <td>
-                                <select class="select_full" name="subject"> 
+                                <select class="select_full" name="subject">
                                     <option value="question"> I have a question </option>
                                     <option value="bug"> I found a bug </option>
                                     <option value="help"> I need help </option>
                                     <option value="professional">  I need professional service </option>
                                     <option value="contribute"> I want to contribute my code</option>
-                                    <option value="other">  Other </option>								
+                                    <option value="other">  Other </option>
                                 </select>
                             </td>
                             <td></td>
@@ -84,8 +82,7 @@ function review_schema_dashboard() {
                 <li class="tab"><a href="#tab-1">Default Value</a></li>
                 <li class="tab"><a href="#tab-2">Configuration</a></li>
                 <li class="tab"><a href="#tab-3">Customization</a></li>
-                <!--- <li class="tab"><a href="#tab-4">How to Use?</a></li> -->
-                <li class="tab"><a href="#tab-5">FAQs</a></li>
+                <li class="tab"><a href="#tab-4">FAQs</a></li>
             </ul>
 
             <div class="clear"></div>
@@ -94,7 +91,7 @@ function review_schema_dashboard() {
                 <!-- Tab 1-->
                 <div id="tab-1">
                     <div id="poststuff">
-                        <div id="postbox-container-5" class="postbox-container">
+                        <div id="postbox-container-1" class="postbox-container">
                             <div class="meta-box-sortables ui-sortable">
                                 <div class="postbox ">
                                     <div class="handlediv" title="Click to toggle"><br></div>
@@ -174,18 +171,15 @@ function review_schema_dashboard() {
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Post blox -->      
-
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
 
                 <!-- Tab 2-->
                 <div id="tab-2">
                     <div id="poststuff">
-                        <div id="postbox-container-1" class="postbox-container">
+                        <div id="postbox-container-2" class="postbox-container">
                             <div class="meta-box-sortables ui-sortable">
                                 <div class="postbox ">
                                     <div class="handlediv" title="Click to toggle"><br></div>
@@ -227,18 +221,15 @@ function review_schema_dashboard() {
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Post blox -->		
-
                             </div>
                         </div>
-                    </div>	
+                    </div>
                 </div>
 
                 <!-- Tab 3-->
                 <div id="tab-3">
                     <div id="poststuff">
-                        <div id="postbox-container-11" class="postbox-container">
+                        <div id="postbox-container-3" class="postbox-container">
                             <div class="meta-box-sortables ui-sortable">
                                 <div class="postbox">
                                     <div class="handlediv" title="Click to toggle"><br></div>
@@ -279,33 +270,16 @@ function review_schema_dashboard() {
                     </div>
                 </div>
 
-                <!-- Tab 4
+                <!-- Tab 4-->
                 <div id="tab-4">
                     <div id="poststuff">
-                        <div id="postbox-container-3" class="postbox-container">
-                            <div class="meta-box-sortables ui-sortable">
-                                <div class="postbox">
-                                    <div class="handlediv" title="Click to toggle"><br></div>
-                                    <h3 class="hndle"><span>Usage Instructions</span></h3>
-                                    <div class="inside">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                      -->
-                <!-- Tab 5-->
-                <div id="tab-5">
-                    <div id="poststuff" style="min-width: 654px !important;">
-                        <div id="postbox-container-5" class="postbox-container">
+                        <div id="postbox-container-4" class="postbox-container">
                             <div class="meta-box-sortables ui-sortable">
                                 <div class="postbox">
                                     <div class="handlediv" title="Click to toggle"><br></div>
                                     <h3 class="hndle"><span>Plugins FAQs</span></h3>
                                     <div class="inside">
-                                        <ol>	
+                                        <ol>
                                             <li><strong>Where I can see preview of my search results?</strong></li>
                                             <p>Here: <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></p>
                                             <li><strong>Do I have to fill in all the details?</strong></li>
@@ -337,8 +311,6 @@ function review_schema_dashboard() {
                     </div>
                 </div>
 
-
-
             </div>
 
         </div>
@@ -348,17 +320,10 @@ function review_schema_dashboard() {
     <script src="<?php echo $adminPath . 'js/jquery.hashchange.min.js'; ?>"></script>
     <script language="javascript">
         jQuery("#tab-container").easytabs();
-        jQuery("#postbox-container-1").css({"width": "87%", "padding-right": "2%"});
-        jQuery("#postbox-container-2").css("width", "35%");
-        jQuery("#postbox-container-3").css({"width": "87%", "padding-right": "2%"});
-        jQuery("#postbox-container-4").css("width", "35%");
-        jQuery("#postbox-container-5").css({"width": "87%", "padding-right": "2%"});
-        jQuery("#postbox-container-6").css("width", "35%");
-        jQuery("#postbox-container-7").css("width", "35%");
-        jQuery("#postbox-container-8").css("width", "35%");
-        jQuery("#postbox-container-9").css("width", "35%");
-        jQuery("#postbox-container-10").css("width", "35%");
-        jQuery("#postbox-container-11").css({"width": "87%", "padding-right": "2%"});
+        jQuery("#postbox-container-1").css({"width": "85%", "padding-right": "2%"});
+        jQuery("#postbox-container-2").css({"width": "85%", "padding-right": "2%"});
+        jQuery("#postbox-container-3").css({"width": "85%", "padding-right": "2%"});
+        jQuery("#postbox-container-4").css({"width": "85%", "padding-right": "2%"});
         jQuery(".postbox h3").click(function () {
             jQuery(jQuery(this).parent().get(0)).toggleClass("closed");
         });
@@ -402,11 +367,11 @@ if ( isset( $_GET['action'] ) ) {
 
         if ( $option_to_reset == 'color' ) delete_option( 'bsf_custom' );
 
-        bsf_reset_options( $option_to_reset );
+        wprc_reset_options( $option_to_reset );
     }
 }
 
-function bsf_reset_options( $option_to_reset ) {
+function wprc_reset_options( $option_to_reset ) {
     //require_once(dirname( __FILE__ ) . '/../settings.php');
     if ( $option_to_reset == 'review' ) add_review_option();
 
@@ -415,8 +380,7 @@ function bsf_reset_options( $option_to_reset ) {
     header( "location:?page=ultimate_schema_dashboard" );
 }
 
-function add_footer_script() {
-    //var_dump( get_current_screen());
+function wprc_add_footer_script() {
     $admin = get_current_screen();
     if ( $admin->parent_base != 'review_schema_dashboard' && $admin->parent_base != 'edit' ) {
         return;
@@ -450,21 +414,21 @@ function add_footer_script() {
 
             jQuery('.schema-datepicker').datepicker();
         });
-function show_custom_field_row() {
-    document.getElementById('image_custom_field').style.display = '';
-}
-function hide_custom_field_row() {
-    document.getElementById('image_custom_field').style.display = 'none';
-}
-function hide_custom_price_row() {
-    document.getElementById('custom_price').style.display = 'none';
-    document.getElementById('fixed_price').style.display = '';
-}
-function hide_fixed_price_row() {
-    document.getElementById('fixed_price').style.display = 'none';
-    document.getElementById('custom_price').style.display = '';
-}
-</script>
-<?php
+        function show_custom_field_row() {
+            document.getElementById('image_custom_field').style.display = '';
+        }
+        function hide_custom_field_row() {
+            document.getElementById('image_custom_field').style.display = 'none';
+        }
+        function hide_custom_price_row() {
+            document.getElementById('custom_price').style.display = 'none';
+            document.getElementById('fixed_price').style.display = '';
+        }
+        function hide_fixed_price_row() {
+            document.getElementById('fixed_price').style.display = 'none';
+            document.getElementById('custom_price').style.display = '';
+        }
+    </script>
+    <?php
 }
 ?>

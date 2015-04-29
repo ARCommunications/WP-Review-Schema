@@ -12,7 +12,7 @@
   Max WP Version: 4.2
  */
 
-  if ( !defined( 'REVIEW_META_BOX_URL' ) ) define( 'REVIEW_META_BOX_URL', plugin_dir_path( __FILE__ ) );
+  if ( !defined( 'REVIEW_META_BOX_URL' ) ) define( 'REVIEW_META_BOX_URL', plugin_dir_url( __FILE__ ) );
 
   if ( !class_exists( "WPReviewSchema" ) ) {
 
@@ -36,7 +36,7 @@
         }
 
         public function review_schema_translation() {
-            load_plugin_textdomain( 'review-schema', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+            load_plugin_textdomain( 'wp-review-schema', false, basename( dirname( __FILE__ ) ) . '/lang/' );
         }
 
         public function review_schema_admin_bar() {
@@ -79,7 +79,7 @@
             wp_register_script( 'bsf-scripts-media', REVIEW_META_BOX_URL . 'js/media.js', '', '1.0' );
             wp_enqueue_script( 'bsf-scripts-media' );
             wp_enqueue_script( 'jquery-ui-datepicker' );
-            if ( !function_exists( 'vc_map' ) ) wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
+            if ( !function_exists( 'vc_map' ) ) wp_enqueue_style( 'jquery-style', REVIEW_META_BOX_URL . 'css/jquery-ui.css' );
         }
 
         public function post_new_enqueue( $hook ) {
@@ -93,7 +93,7 @@
             wp_register_script( 'bsf-scripts-media', REVIEW_META_BOX_URL . 'js/media.js', '', '1.0' );
             wp_enqueue_script( 'bsf-scripts-media' );
             wp_enqueue_script( 'jquery-ui-datepicker' );
-            if ( !function_exists( 'vc_map' ) ) wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
+            if ( !function_exists( 'vc_map' ) ) wp_enqueue_style( 'jquery-style', REVIEW_META_BOX_URL . 'css/jquery-ui.css' );
         }
 
         public function set_styles() {
@@ -118,7 +118,7 @@
                     background: url(<?php echo plugins_url( '/images/star.png', __FILE__ ); ?>) no-repeat 0 -32px !important;
                 }
                 #star-icons-32.icon32 {background: url(<?php echo plugins_url( '/images/gray-32.png', __FILE__ ); ?>) no-repeat;}
-            </style>		
+            </style>
             <?php
         }
 
@@ -220,7 +220,7 @@
             wp_enqueue_script( 'wp-color-picker' );
             wp_enqueue_script( 'cp_custom', plugins_url( 'js/cp-script.min.js', __FILE__ ), array('jquery', 'wp-color-picker'), '1.1', true );
             wp_enqueue_style( 'wp-color-picker' );
-            wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
+            wp_enqueue_style( 'jquery-style', REVIEW_META_BOX_URL . 'css/jquery-ui.css' );
         }
 
         public function bsf_color_scripts() {
