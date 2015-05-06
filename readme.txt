@@ -32,7 +32,7 @@ It is basically a short summary of your page in the search results of Google, Ya
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "WP Review Schema". 
+2. Search For "WP Review Schema".
 3. Install, then Activate it.
 
 = Old Way: =

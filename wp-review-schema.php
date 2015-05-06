@@ -99,8 +99,7 @@
         public function set_styles() {
             wp_register_style( 'star_style', plugins_url( '/css/jquery.rating.css', __FILE__ ) );
             wp_register_style( 'meta_style', plugins_url( 'admin/css/style.css', __FILE__ ) );
-            wp_register_style( 'admin_style', plugins_url( 'admin/css/admin.css', __FILE__ ) );
-            wp_register_script( 'bsf_jquery_ui', plugins_url( '/js/jquery-ui.js', __FILE__ ) );
+            wp_register_style( 'wprc_admin_style', plugins_url( 'admin/css/admin.css', __FILE__ ) );
             wp_register_script( 'bsf_jquery_star', plugins_url( '/js/jquery.rating.min.js', __FILE__ ) );
         }
 
@@ -135,25 +134,25 @@
 
         public function submit_request() {
             $to = "WPDeveloper.net <info@wpdeveloper.net>";
-            $from = $_POST['email'];
-            $site = $_POST['site_url'];
-            $sub = $_POST['subject'];
-            $message = $_POST['message'];
-            $name = $_POST['name'];
-            $post_url = $_POST['post_url'];
+            $from = sanitize_email($_POST['email']);
+            $site = esc_url($_POST['site_url']);
+            $sub = sanitize_text_field($_POST['subject']);
+            $message = sanitize_text_field($_POST['message']);
+            $name = sanitize_text_field($_POST['name']);
+            $post_url = esc_url($_POST['post_url']);
 
             if ( $sub == "question" ) {
-                $subject = "[ARComSRS] New question received from " . $name;
+                $subject = "[WPReviewSchema] New question received from " . $name;
             } else if ( $sub == "bug" ) {
-                $subject = "[ARComSRS] New bug found by " . $name;
+                $subject = "[WPReviewSchema] New bug found by " . $name;
             } else if ( $sub == "help" ) {
-                $subject = "[ARComSRS] New help request received from " . $name;
+                $subject = "[WPReviewSchema] New help request received from " . $name;
             } else if ( $sub == "professional" ) {
-                $subject = "[ARComSRS] New service quote request received from " . $name;
+                $subject = "[WPReviewSchema] New service quote request received from " . $name;
             } else if ( $sub == "contribute" ) {
-                $subject = "[ARComSRS] New development contribution request by " . $name;
+                $subject = "[WPReviewSchema] New development contribution request by " . $name;
             } else if ( $sub == "other" ) {
-                $subject = "[ARComSRS] New contact request received from " . $name;
+                $subject = "[WPReviewSchema] New contact request received from " . $name;
             }
 
             $html = '
@@ -192,7 +191,7 @@
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             $headers .= 'From:' . $name . '<' . $from . '>' . "\r\n";
-            $headers .= 'Cc: Tapan Kumer Das <tapan@innovativebd.net>' . "\r\n";
+            $headers .= 'Cc: Tapan Kumer Das <tapan29bd@gmail.com>' . "\r\n";
             echo mail( $to, $subject, $html, $headers ) ? "Thank you!" : "Something went wrong!";
 
             die();
