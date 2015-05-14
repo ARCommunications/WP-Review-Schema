@@ -135,7 +135,7 @@ function bsf_metaboxes( array $meta_boxes ) {
 
     $meta_boxes[] = array(
         'id' => 'review_metabox',
-        'title' => __( 'Configure Rich Snippet', 'ultimate-schema' ),
+        'title' => __( 'Configure WP Schema', 'ultimate-schema' ),
         'pages' => $post_types, //array( 'post','page' ), // Custom Post types
         'context' => 'normal',
         'priority' => 'high',
@@ -143,7 +143,7 @@ function bsf_metaboxes( array $meta_boxes ) {
         'fields' => array(
             // Meta Settings for Item Review
             array(
-                'name' => __( 'Rich Snippets - Item Review', 'ultimate-schema' ),
+                'name' => __( 'Schema Snippets - Review', 'ultimate-schema' ),
                 'desc' => __( 'Please provide the following information.', 'ultimate-schema' ),
                 'id' => $prefix . 'review_title',
                 'class' => 'review',
