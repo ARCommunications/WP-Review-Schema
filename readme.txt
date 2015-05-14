@@ -1,9 +1,9 @@
 === WP Review Schema ===
 Contributors: Asif2BD, tapan29bd
-Donate link: http://wpdeveloper.net/free-plugin/wp-review-schema/
-Tags: Review, Article, rich snippet, schema.org, schema, microdata, microformat, SERP, Google, Yahoo, Bing
-Requires at least: 3.7
-Tested up to: 4.2
+Donate link: https://wpdeveloper.net/go/WPRS
+Tags: Review, Article, rich snippet, schema.org, schema, microdata, microformat, SERP, Google, Yahoo, Bing, review schema, google schema, schema plugin
+Requires at least: 3.0
+Tested up to: 4.2.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,11 @@ The Ultimate Review Schema for WordPress. Improve your CTR & SEO Rankings. Add R
 == Description ==
 
 If you review anything in your website, but you are not using Review Schema, you are just missing out. This plugin provide full support for Review Schema. Its free just give it a try and see the increase of Click Through Rate (CRT) massive improvement from Google Search.
+
+**[PRO Version](https://wpdeveloper.net/free-plugin/wp-review-schema/)** is available with more Features, Premium support..
+
+> <strong>Development on Github</strong><br>
+> This plugin is also [available on github](https://github.com/ARCommunications/WP-Review-Schema) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
 = What is a Rich Snippet? =
 It is basically a short summary of your page in the search results of Google, Yahoo, Bing and sometimes in the News feed of Facebook in nice format with star ratings, author photo, image, etc.
@@ -55,15 +60,15 @@ It is basically a short summary of your page in the search results of Google, Ya
 This plugin currently supports Review Schema.
 
 == Screenshots ==
-1. Meta box in post-new under the editor screen.
-2. Select content type from dropdown
-3. Fill the details as much as you can
-4. Test the post or page URL in Google Rich Snippets Testing
+1. How Search result looks if you use **WP Review Schema**
+2. Configuration Option
+3. Customization Option
+4. Contact us form, inside Option Page
 
 
 == Changelog ==
 
-= 1.0.0 - 2015-04-24 =
+= 1.0.0 - May 14, 2015 =
 * Initial Version
 
 
@@ -73,6 +78,6 @@ This plugin currently supports Review Schema.
 * Initial Version
 
 == Donation ==
-Buy the pro addon if you want to support the development.
+Buy the pro version if you want to support the development.
 
-http://wpdeveloper.net/free-plugin/wp-review-schema/
+https://wpdeveloper.net/free-plugin/wp-review-schema/

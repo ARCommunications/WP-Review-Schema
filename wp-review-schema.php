@@ -1,16 +1,18 @@
 <?php
 /*
   Plugin Name: WP Review Schema Free
-  Plugin URI: http://wpdeveloper.net/free-plugin/wp-review-schema/
+  Plugin URI: https://wpdeveloper.net/free-plugin/wp-review-schema/
   Author: WPDeveloper.net
   Author URI: http://wpdeveloper.net
-  Description: The Review Schema gives the power to the blog author to control the rich snippets of Reviews to be shown in the search results by the search engines.
+  Description: The Ultimate Review Schema for WordPress. Improve your CTR & SEO Rankings. Add Review Schema And Look Good in Google.
   Version: 1.0.0
   Text Domain: wp-review-schema
   License: GPL2
-  Min WP Version: 2.5
-  Max WP Version: 4.2
+  Min WP Version: 3.0
+  Max WP Version: 4.2.2
  */
+
+define("WPRS_PLUGIN_URL",plugins_url("",__FILE__ ));#without trailing slash (/)
 
   if ( !defined( 'REVIEW_META_BOX_URL' ) ) define( 'REVIEW_META_BOX_URL', plugin_dir_url( __FILE__ ) );
 
