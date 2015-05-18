@@ -45,7 +45,8 @@ function wprc_display_rich_snippet( $content ) {
     $post_date = get_the_date( 'Y-m-d', $post->ID );
 
     $review = $content;
-    $review .= '<div id="snippet-box" style="background:' . $args_color["snippet_box_bg"] . '; color:' . $args_color["snippet_box_color"] . '; border:1px solid ' . $args_color["snippet_border"] . ';">';
+    $review .= '<!-- WP Review Schema By WPDeveloper.net -->';
+    $review .= '<div id="snippet-box" style="background:' . $args_color["snippet_box_bg"] . '; color:' . $args_color["snippet_box_color"] . '; border:1px solid ' . $args_color["snippet_border"] . '; margin-top: 20px;">';
 
     if ( $args_review['review_title'] != "" ) {
         $review .= '<div class="snippet-title" style="background:' . $args_color["snippet_title_bg"] . '; color:' . $args_color["snippet_title_color"] . '; border-bottom:1px solid ' . $args_color["snippet_border"] . ';">' . $args_review['review_title'] . '</div>';
