@@ -41,10 +41,12 @@ function review_schema_dashboard() {
     $args_color = get_option( 'bsf_custom' );
     ?>
     <div class="wrap">
-        <div id="star-icons-32" class="icon32"></div><h2>Review Schema - Dashboard</h2>
+        <div id="star-icons-32" class="icon32"></div><h2>WP Review Schema Free - Dashboard</h2>
         <div class="clear"></div>
         <div class="postbox" style=" width: 36%; float: right; ">
-            <h3 class="get_in_touch"><p>Get in touch with the Plugin Developers</p></h3>
+        <center><a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo WPRS_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="WPDeveloper" /></a>
+</center>
+            <h3 class="get_in_touch"><p>Get in touch with the <a href="https://wpdeveloper.net/" target="_blank"><b>WPDeveloper.net</b></a></p></h3>
             <div class="inside">
                 <form name="support" id="support_form" action="" method="post" onsubmit="return false;">
                     <p>Just fill out the form below and your message will be emailed to the Plugin Developers.</p>
@@ -108,7 +110,7 @@ function review_schema_dashboard() {
                             <div class="meta-box-sortables ui-sortable">
                                 <div class="postbox ">
                                     <div class="handlediv" title="Click to toggle"><br></div>
-                                    <h3 class="hndle"><span>Default Value for Item Review (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)</span></h3>
+                                    <h3 class="hndle"><span>Default Value for Item Review (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)</span></h3>
                                     <div class="inside">
                                         <div class="table">
                                             <form id="bsf_review_form" method="post">
@@ -118,21 +120,21 @@ function review_schema_dashboard() {
                                                             <th align="right" width="50%">Reviewer Name:</th>
                                                             <td>
                                                                 <input class="bsf_text_medium" type="text" name="default[reviewer_name]" disabled="disabled" value="<?php echo $default['reviewer_name']; ?>"/><br>
-                                                                (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <th align="right">Item Name:</th>
                                                             <td>
                                                                 <input class="bsf_text_medium" type="text" name="default[item_name]" disabled="disabled" value="<?php echo $default["item_name"]; ?>"/><br>
-                                                                (<a href="hhttp://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="hhttps://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <th align="right">Item Ratings:</th>
                                                             <td>
                                                                 <input class="bsf_text_medium" type="text" name="default[item_rating]" disabled="disabled" value="<?php echo $default["item_rating"]; ?>"/><br>
-                                                                (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -141,7 +143,7 @@ function review_schema_dashboard() {
                                                                 <input <?php echo isset( $default['use_image_from'] ) && $default['use_image_from'] == 'featured_image' ? 'checked' : (!isset( $default['use_image_from'] ) ? 'checked' : '' ) ?> type="radio" name="default[use_image_from]" disabled="disabled" id="use_image_from_1" onclick="hide_custom_field_row()" value="featured_image" /> <label> Featured image </label><br />
                                                                 <input <?php echo isset( $default['use_image_from'] ) && $default['use_image_from'] == 'first_image' ? 'checked' : '' ?> type="radio" name="default[use_image_from]" disabled="disabled" id="use_image_from_2" onclick="hide_custom_field_row()"  value="first_image" /> <label>First image from content</label><br />
                                                                 <input <?php echo isset( $default['use_image_from'] ) && $default['use_image_from'] == 'custom_field' ? 'checked' : '' ?> type="radio" name="default[use_image_from]" disabled="disabled" id="use_image_from_3" onclick="show_custom_field_row()" value="custom_field" /> <label> From a custom field </label><br>
-                                                                (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr id="image_custom_field" <?php if ( !isset( $default['use_image_from'] ) || $default['use_image_from'] != 'custom_field' ) { ?>style="display: none;"<?php } ?>>
@@ -155,14 +157,14 @@ function review_schema_dashboard() {
                                                             <td>
                                                                 <input <?php echo isset( $default['price'] ) && $default['price'] == 'fixed_price' ? 'checked' : (!isset( $default['price'] ) ? 'checked' : '' ) ?> type="radio" name="default[price]" disabled="disabled" onclick="hide_custom_price_row()" value="fixed_price" /> <label> Default price</label><br />
                                                                 <input <?php echo isset( $default['price'] ) && $default['price'] == 'custom_price' ? 'checked' : '' ?> type="radio" name="default[price]" disabled="disabled" onclick="hide_fixed_price_row()" value="custom_price" /> <label> From a custom field</label><br>
-                                                                (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr id="fixed_price" <?php if ( isset( $default['price'] ) && $default['price'] != 'fixed_price' ) { ?>style="display: none;"<?php } ?>>
                                                             <th align="right">Fixed Price:</th>
                                                             <td>
                                                                 <input type="text" name="default[price_default]" disabled="disabled" value="<?php echo isset( $default['price_default'] ) && $default['price_default'] != '' ? $default['price_default'] : '' ?>" size="20" /><br>
-                                                                (<a href="http://wpdeveloper.net/free-plugin/wp-review-schema/" target="_blank"><b>available as premium addon</b></a>)
+                                                                (<a href="https://wpdeveloper.net/go/WPRS" target="_blank"><b>available as Pro version</b></a>)
                                                             </td>
                                                         </tr>
                                                         <tr id="custom_price" <?php if ( !isset( $default['price'] ) || $default['price'] != 'custom_price' ) { ?>style="display: none;"<?php } ?>>
@@ -300,7 +302,7 @@ function review_schema_dashboard() {
                                             <li><strong>Why does the plugin create extra content at the end of my page / post? Can I simply hide / customise it? It's messing my design!</strong></li>
                                             <p>We understand you don't like the content that gets displayed on your page / post. However as per the strong recommendation of Google, the MicroData should be clearly visible to the user.</p>
                                             <p>Here is a reference link of what Google says. <a href="https://sites.google.com/site/webmasterhelpforum/en/faq-rich-snippets#display"> https://sites.google.com/site/webmasterhelpforum/en/faq-rich-snippets#display</a></p>
-                                            <p>If you don't like the default design the content box created by plugin, you can always customise it or edit CSS located <a target="_blank" title="Click here to edit the css" href="plugin-editor.php?file=wp-review-schema/css/style.css&plugin=wp-review-schema/index.php"> here </a>or request professional service at $25</p>
+                                            
                                             <li><strong>How does this plugin work with other plugins like WordPress SEO, wooCommerce, etc?</strong></li>
                                             <p>Well, the plugin works perfectly with most of the other plugins as the only thing "WP Review Schema" does is - it give you power to add Rich Snippets MicroData in your pages and posts easily. <br><br>If you find any it conflicting with any other plugin, please do not hesitate to report an issue.</p>
                                             <li><strong>How much time does it take to show up rich snippets for my search results? My search results are still not coming up with rich snippets.</strong></li>
